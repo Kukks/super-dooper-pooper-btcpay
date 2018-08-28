@@ -19,8 +19,9 @@ export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-s"
 ./btcpay-down.sh
 service docker stop
 mkfs.ext4 /dev/vdc
-mkdir -p /mnt/dockervolume
+mkdir /mnt/dockervolume
 mount /dev/vdc /mnt/dockervolume
+echo "/dev/vdc        /mnt/dockervolume        ext4   defaults        0 0" >> /etc/fstab
 mv /var/lib/docker /mnt/dockervolume
 ln -s /mnt/dockervolume /var/lib/docker
 service docker start
