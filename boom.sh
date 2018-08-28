@@ -1,6 +1,6 @@
 apt-get update
-apt-get install -y git
-rm -r btcpayserver-docker
+apt-get install -y git docker
+rm -r btcpayserver-docker /root/.ssh/id_rsa_btcpay
 git clone https://github.com/btcpayserver/btcpayserver-docker
 cd btcpayserver-docker
 export NBITCOIN_NETWORK="mainnet"
